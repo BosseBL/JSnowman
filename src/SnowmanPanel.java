@@ -10,11 +10,14 @@ public class SnowmanPanel
 {
   protected int mid = 150;
   protected int top = 50;
-  
+  protected int width = 300;
+  protected int height = 200;  
+
+
   SnowFlakeManager sfm = new SnowFlakeManager(0.05F, 170, 300);
   
   public SnowmanPanel() {
-    setPreferredSize(new Dimension(300, 200));
+    setPreferredSize(new Dimension(width, height));
     setBackground(Color.cyan);
   }
   
@@ -62,7 +65,7 @@ public class SnowmanPanel
     g.setColor(Color.WHITE);
     for (int i = 0; i < sfList.size(); i++) {
       SnowFlake sf = (SnowFlake)sfList.get(i);
-      g.fillOval((int)x, (int)y, 4, 4);
+      g.fillOval((int)sf.x, (int)sf.y, 4, 4);
     }
     sfm.updateFlakes();
   }
